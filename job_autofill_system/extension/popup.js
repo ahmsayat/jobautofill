@@ -223,13 +223,13 @@ class PopupController {
 
   openDocumentation() {
     chrome.tabs.create({
-      url: 'https://github.com/your-repo/job-autofill-extension/wiki'
+      url: 'https://github.com/ahmsayat/jobautofill/tree/main/job_autofill_system'
     });
   }
 
   openTroubleshooting() {
     chrome.tabs.create({
-      url: 'https://github.com/your-repo/job-autofill-extension/wiki/troubleshooting'
+      url: 'https://github.com/ahmsayat/jobautofill/tree/main/job_autofill_system'
     });
   }
 }
