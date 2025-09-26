@@ -1,0 +1,151 @@
+{
+  "skills": {
+    "technical": {
+      "programmingLanguages": [
+        {
+          "name": "",
+          "proficiency": "",
+          "yearsExperience": 0
+        }
+      ],
+      "frameworks": [
+        {
+          "name": "",
+          "proficiency": "",
+          "yearsExperience": 0
+        }
+      ],
+      "databases": [
+        {
+          "name": "",
+          "proficiency": "",
+          "yearsExperience": 0
+        }
+      ],
+      "tools": [
+        {
+          "name": "",
+          "proficiency": "",
+          "yearsExperience": 0
+        }
+      ],
+      "cloudPlatforms": [
+        {
+          "name": "",
+          "proficiency": "",
+          "certifications": [
+            ""
+          ]
+        }
+      ],
+      "operatingSystems": [
+        ""
+      ],
+      "methodologies": [
+        ""
+      ]
+    },
+    "soft": [
+      {
+        "skill": "",
+        "description": "",
+        "examples": [
+          ""
+        ]
+      }
+    ],
+    "industry": [
+      {
+        "skill": "",
+        "yearsExperience": 0,
+        "description": ""
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "",
+      "issuer": "",
+      "issueDate": "",
+      "expiryDate": "",
+      "credentialId": "",
+      "verificationUrl": "",
+      "skillsValidated": [
+        ""
+      ],
+      "level": "",
+      "status": "active"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "",
+      "issuer": "",
+      "licenseNumber": "",
+      "issueDate": "",
+      "expiryDate": "",
+      "state": "",
+      "status": "active"
+    }
+  ],
+  "publications": [
+    {
+      "title": "",
+      "authors": [
+        ""
+      ],
+      "publication": "",
+      "publishDate": "",
+      "doi": "",
+      "url": "",
+      "description": ""
+    }
+  ],
+  "patents": [
+    {
+      "title": "",
+      "patentNumber": "",
+      "inventors": [
+        ""
+      ],
+      "filingDate": "",
+      "grantDate": "",
+      "status": "",
+      "description": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "description": "",
+      "role": "",
+      "startDate": "",
+      "endDate": "",
+      "technologies": [
+        ""
+      ],
+      "url": "",
+      "githubUrl": "",
+      "achievements": [
+        ""
+      ],
+      "teamSize": 1,
+      "type": ""
+    }
+  ],
+  "volunteering": [
+    {
+      "organization": "",
+      "role": "",
+      "startDate": "",
+      "endDate": "",
+      "description": "",
+      "skills": [
+        ""
+      ],
+      "achievements": [
+        ""
+      ]
+    }
+  ]
+}

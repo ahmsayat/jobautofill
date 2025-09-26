@@ -1,0 +1,102 @@
+{
+  "jobApplicationData": {
+    "version": "1.0",
+    "lastUpdated": "",
+    "dataTemplates": {
+      "personalInfo": "./personal_info_template.json",
+      "workExperience": "./work_experience_template.json",
+      "education": "./education_template.json",
+      "skillsCertifications": "./skills_certifications_template.json"
+    },
+    "userProfile": {
+      "personalInfo": "./user_personal_info.json",
+      "workExperience": "./user_work_experience.json",
+      "education": "./user_education.json",
+      "skillsCertifications": "./user_skills_certifications.json"
+    },
+    "documents": {
+      "resume": {
+        "path": "",
+        "formats": {
+          "pdf": "",
+          "docx": "",
+          "txt": ""
+        }
+      },
+      "coverLetter": {
+        "template": "",
+        "customized": {
+          "path": "",
+          "lastModified": ""
+        }
+      },
+      "portfolio": {
+        "url": "",
+        "localPath": ""
+      }
+    },
+    "autofillSettings": {
+      "enabledSites": [
+        "linkedin.com",
+        "indeed.com",
+        "glassdoor.com",
+        "monster.com",
+        "ziprecruiter.com",
+        "workday.com",
+        "greenhouse.io",
+        "lever.co",
+        "smartrecruiters.com",
+        "jobvite.com"
+      ],
+      "fieldMappings": {
+        "commonFields": {
+          "firstName": ["first-name", "fname", "first_name", "firstName", "given-name"],
+          "lastName": ["last-name", "lname", "last_name", "lastName", "family-name"],
+          "email": ["email", "email-address", "e-mail", "emailAddress", "user-email"],
+          "phone": ["phone", "phone-number", "telephone", "mobile", "phoneNumber"],
+          "address": ["address", "street-address", "address1", "streetAddress"],
+          "city": ["city", "locality"],
+          "state": ["state", "region", "province"],
+          "zipCode": ["zip", "postal-code", "zipcode", "postalCode"],
+          "country": ["country"],
+          "linkedin": ["linkedin", "linkedin-url", "linkedinUrl"],
+          "website": ["website", "personal-website", "portfolio"],
+          "summary": ["summary", "professional-summary", "bio", "about"]
+        },
+        "experienceFields": {
+          "jobTitle": ["job-title", "title", "position", "role"],
+          "company": ["company", "employer", "organization"],
+          "startDate": ["start-date", "from-date", "begin-date"],
+          "endDate": ["end-date", "to-date", "finish-date"],
+          "description": ["description", "responsibilities", "duties", "job-description"]
+        },
+        "educationFields": {
+          "school": ["school", "university", "college", "institution"],
+          "degree": ["degree", "qualification", "diploma"],
+          "major": ["major", "field-of-study", "subject", "specialization"],
+          "gpa": ["gpa", "grade", "cgpa"],
+          "graduationDate": ["graduation-date", "completion-date", "grad-date"]
+        }
+      },
+      "autoSubmit": false,
+      "confirmBeforeFill": true,
+      "skipFilledFields": true,
+      "delay": {
+        "betweenFields": 100,
+        "afterFill": 500
+      }
+    },
+    "applicationTracking": {
+      "trackApplications": true,
+      "saveToFile": "./application_log.json",
+      "fields": [
+        "jobTitle",
+        "company",
+        "applicationDate",
+        "jobUrl",
+        "status",
+        "notes"
+      ]
+    }
+  }
+}

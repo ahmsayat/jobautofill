@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2196F3;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 12px;
+    }
+    .section {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .primary-btn {
+      background-color: #2196F3;
+      color: white;
+    }
+    .primary-btn:hover {
+      background-color: #1976D2;
+    }
+    .secondary-btn {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .secondary-btn:hover {
+      background-color: #e0e0e0;
+    }
+    .status {
+      text-align: center;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+    .status.success {
+      background-color: #e8f5e8;
+      color: #2e7d32;
+    }
+    .status.error {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+    .switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🚀 JobFill Pro</div>
+    <div class="subtitle">Smart Job Application Assistant</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Quick Actions</div>
+    <button id="fillBtn" class="primary-btn">🎯 Auto-Fill Current Form</button>
+    <button id="detectBtn" class="secondary-btn">🔍 Detect Form Fields</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Profile Management</div>
+    <button id="loadProfileBtn" class="secondary-btn">📁 Load Profile Data</button>
+    <button id="saveProfileBtn" class="secondary-btn">💾 Save Current Data</button>
+    <button id="exportBtn" class="secondary-btn">📤 Export Profile</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Settings</div>
+    <div class="toggle-switch">
+      <span>Auto-detect forms</span>
+      <label class="switch">
+        <input type="checkbox" id="autoDetectToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle-switch">
+      <span>Smart suggestions</span>
+      <label class="switch">
+        <input type="checkbox" id="smartSuggestionsToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    <button id="settingsBtn" class="secondary-btn">⚙️ Advanced Settings</button>
+  </div>
+
+  <div id="status" class="status" style="display: none;"></div>
+
+  <div class="section">
+    <div class="section-title">Help & Support</div>
+    <button id="helpBtn" class="secondary-btn">❓ View Documentation</button>
+    <button id="troubleshootBtn" class="secondary-btn">🔧 Troubleshooting</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

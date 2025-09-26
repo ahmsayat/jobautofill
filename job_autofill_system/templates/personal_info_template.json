@@ -1,0 +1,52 @@
+{
+  "personalInformation": {
+    "firstName": "",
+    "lastName": "",
+    "fullName": "",
+    "email": "",
+    "phone": "",
+    "alternatePhone": "",
+    "address": {
+      "street": "",
+      "city": "",
+      "state": "",
+      "zipCode": "",
+      "country": ""
+    },
+    "socialProfiles": {
+      "linkedin": "",
+      "github": "",
+      "portfolio": "",
+      "personalWebsite": ""
+    },
+    "demographics": {
+      "dateOfBirth": "",
+      "nationality": "",
+      "workAuthorization": {
+        "authorized": true,
+        "visaStatus": "",
+        "requiresSponsorship": false
+      },
+      "veteranStatus": "",
+      "disabilityStatus": "",
+      "gender": "",
+      "ethnicity": ""
+    },
+    "preferences": {
+      "preferredName": "",
+      "pronouns": "",
+      "salaryExpectation": {
+        "minimum": "",
+        "maximum": "",
+        "currency": "USD"
+      },
+      "availableStartDate": "",
+      "willingToRelocate": false,
+      "remoteWork": {
+        "preferred": true,
+        "acceptable": true,
+        "onlyRemote": false
+      }
+    }
+  }
+}

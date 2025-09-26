@@ -1,0 +1,110 @@
+{
+  "education": [
+    {
+      "institution": "",
+      "degree": {
+        "type": "",
+        "major": "",
+        "minor": "",
+        "concentration": "",
+        "gpa": "",
+        "maxGpa": "4.0"
+      },
+      "dates": {
+        "startDate": "",
+        "endDate": "",
+        "graduationDate": "",
+        "inProgress": false
+      },
+      "location": {
+        "city": "",
+        "state": "",
+        "country": ""
+      },
+      "achievements": {
+        "honors": [
+          ""
+        ],
+        "awards": [
+          ""
+        ],
+        "scholarships": [
+          ""
+        ],
+        "deanslist": false,
+        "summaLaude": false,
+        "magnaCumLaude": false,
+        "cumLaude": false
+      },
+      "activities": {
+        "clubs": [
+          ""
+        ],
+        "leadership": [
+          ""
+        ],
+        "sports": [
+          ""
+        ],
+        "volunteering": [
+          ""
+        ]
+      },
+      "relevantCoursework": [
+        ""
+      ],
+      "projects": [
+        {
+          "name": "",
+          "description": "",
+          "technologies": [
+            ""
+          ],
+          "url": ""
+        }
+      ]
+    }
+  ],
+  "additionalEducation": {
+    "certifications": [
+      {
+        "name": "",
+        "issuer": "",
+        "issueDate": "",
+        "expiryDate": "",
+        "credentialId": "",
+        "url": ""
+      }
+    ],
+    "onlineCourses": [
+      {
+        "courseName": "",
+        "platform": "",
+        "instructor": "",
+        "completionDate": "",
+        "certificateUrl": "",
+        "skills": [
+          ""
+        ]
+      }
+    ],
+    "workshops": [
+      {
+        "name": "",
+        "organizer": "",
+        "date": "",
+        "location": "",
+        "description": ""
+      }
+    ],
+    "languages": [
+      {
+        "language": "",
+        "proficiency": "",
+        "certifications": [
+          ""
+        ]
+      }
+    ]
+  }
+}

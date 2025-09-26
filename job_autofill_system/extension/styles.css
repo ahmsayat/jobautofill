@@ -1,0 +1,370 @@
+/* Job Autofill Extension Content Script Styles */
+
+/* Auto-fill highlight overlay */
+.job-autofill-highlight {
+  outline: 2px solid #2196F3 !important;
+  outline-offset: 2px !important;
+  background-color: rgba(33, 150, 243, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Field detection indicator */
+.job-autofill-detected {
+  position: relative !important;
+}
+
+.job-autofill-detected::after {
+  content: "✓" !important;
+  position: absolute !important;
+  top: -5px !important;
+  right: -5px !important;
+  background: #4CAF50 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 16px !important;
+  height: 16px !important;
+  font-size: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  z-index: 10000 !important;
+}
+
+/* Filling animation */
+.job-autofill-filling {
+  animation: job-autofill-pulse 1s ease-in-out !important;
+}
+
+@keyframes job-autofill-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(33, 150, 243, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+  }
+}
+
+/* Success indicator */
+.job-autofill-success {
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  border: 2px solid #4CAF50 !important;
+  transition: all 0.5s ease !important;
+}
+
+/* Error indicator */
+.job-autofill-error {
+  background-color: rgba(244, 67, 54, 0.2) !important;
+  border: 2px solid #f44336 !important;
+  animation: job-autofill-shake 0.5s ease-in-out !important;
+}
+
+@keyframes job-autofill-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Tooltip for field suggestions */
+.job-autofill-tooltip {
+  position: absolute !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  z-index: 10001 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  max-width: 200px !important;
+  word-wrap: break-word !important;
+}
+
+.job-autofill-tooltip.show {
+  opacity: 1 !important;
+}
+
+.job-autofill-tooltip::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  margin-left: -5px !important;
+  border-width: 5px !important;
+  border-style: solid !important;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent !important;
+}
+
+/* Form detection overlay */
+.job-autofill-form-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+.job-autofill-modal {
+  background: white !important;
+  padding: 30px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  max-width: 400px !important;
+  width: 90% !important;
+  text-align: center !important;
+}
+
+.job-autofill-modal h3 {
+  margin: 0 0 15px 0 !important;
+  color: #333 !important;
+  font-size: 18px !important;
+}
+
+.job-autofill-modal p {
+  margin: 0 0 20px 0 !important;
+  color: #666 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.job-autofill-modal button {
+  background: #2196F3 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  margin: 0 5px !important;
+}
+
+.job-autofill-modal button:hover {
+  background: #1976D2 !important;
+}
+
+.job-autofill-modal button.secondary {
+  background: #757575 !important;
+}
+
+.job-autofill-modal button.secondary:hover {
+  background: #616161 !important;
+}
+
+/* Progress indicator */
+.job-autofill-progress {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: white !important;
+  padding: 15px 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  z-index: 10002 !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  min-width: 200px !important;
+  border-left: 4px solid #2196F3 !important;
+}
+
+.job-autofill-progress h4 {
+  margin: 0 0 10px 0 !important;
+  color: #333 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.job-autofill-progress-bar {
+  width: 100% !important;
+  height: 6px !important;
+  background: #e0e0e0 !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+  margin-bottom: 8px !important;
+}
+
+.job-autofill-progress-fill {
+  height: 100% !important;
+  background: linear-gradient(90deg, #2196F3, #21CBF3) !important;
+  border-radius: 3px !important;
+  transition: width 0.3s ease !important;
+}
+
+.job-autofill-progress-text {
+  font-size: 12px !important;
+  color: #666 !important;
+  margin: 0 !important;
+}
+
+/* Notification toast */
+.job-autofill-toast {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: white !important;
+  padding: 15px 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  z-index: 10003 !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  max-width: 300px !important;
+  transform: translateX(400px) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.job-autofill-toast.show {
+  transform: translateX(0) !important;
+}
+
+.job-autofill-toast.success {
+  border-left: 4px solid #4CAF50 !important;
+}
+
+.job-autofill-toast.error {
+  border-left: 4px solid #f44336 !important;
+}
+
+.job-autofill-toast.warning {
+  border-left: 4px solid #FF9800 !important;
+}
+
+.job-autofill-toast.info {
+  border-left: 4px solid #2196F3 !important;
+}
+
+.job-autofill-toast-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 8px !important;
+}
+
+.job-autofill-toast-title {
+  font-weight: bold !important;
+  color: #333 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.job-autofill-toast-close {
+  background: none !important;
+  border: none !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  color: #999 !important;
+  padding: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.job-autofill-toast-close:hover {
+  color: #666 !important;
+}
+
+.job-autofill-toast-message {
+  color: #666 !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+/* Field category badges */
+.job-autofill-field-badge {
+  position: absolute !important;
+  top: -20px !important;
+  left: 0 !important;
+  background: #2196F3 !important;
+  color: white !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  z-index: 10000 !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  white-space: nowrap !important;
+}
+
+.job-autofill-field-badge.personal { background: #4CAF50 !important; }
+.job-autofill-field-badge.work { background: #FF9800 !important; }
+.job-autofill-field-badge.education { background: #9C27B0 !important; }
+.job-autofill-field-badge.skills { background: #607D8B !important; }
+.job-autofill-field-badge.application { background: #E91E63 !important; }
+
+/* Accessibility improvements */
+.job-autofill-screen-reader-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .job-autofill-modal {
+    background: #2d2d2d !important;
+    color: white !important;
+  }
+  
+  .job-autofill-modal h3 {
+    color: white !important;
+  }
+  
+  .job-autofill-modal p {
+    color: #ccc !important;
+  }
+  
+  .job-autofill-progress {
+    background: #2d2d2d !important;
+    color: white !important;
+  }
+  
+  .job-autofill-progress h4 {
+    color: white !important;
+  }
+  
+  .job-autofill-toast {
+    background: #2d2d2d !important;
+    color: white !important;
+  }
+  
+  .job-autofill-toast-title {
+    color: white !important;
+  }
+  
+  .job-autofill-toast-message {
+    color: #ccc !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .job-autofill-highlight,
+  .job-autofill-filling,
+  .job-autofill-success,
+  .job-autofill-error,
+  .job-autofill-tooltip,
+  .job-autofill-toast,
+  .job-autofill-progress-fill {
+    animation: none !important;
+    transition: none !important;
+  }
+}

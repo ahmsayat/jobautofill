@@ -1,0 +1,61 @@
+{
+  "workExperience": [
+    {
+      "jobTitle": "",
+      "company": "",
+      "companySize": "",
+      "industry": "",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "remote": false
+      },
+      "employment": {
+        "type": "Full-time",
+        "startDate": "",
+        "endDate": "",
+        "currentJob": false,
+        "reasonForLeaving": ""
+      },
+      "responsibilities": [
+        ""
+      ],
+      "achievements": [
+        ""
+      ],
+      "skills": [
+        ""
+      ],
+      "tools": [
+        ""
+      ],
+      "managementExperience": {
+        "managedTeam": false,
+        "teamSize": 0,
+        "managementLevel": ""
+      },
+      "salary": {
+        "amount": "",
+        "currency": "USD",
+        "frequency": "annual"
+      }
+    }
+  ],
+  "careerSummary": {
+    "totalYearsExperience": 0,
+    "industryExperience": {
+      "technology": 0,
+      "finance": 0,
+      "healthcare": 0,
+      "education": 0,
+      "retail": 0,
+      "other": 0
+    },
+    "keyStrengths": [
+      ""
+    ],
+    "careerObjective": "",
+    "professionalSummary": ""
+  }
+}
