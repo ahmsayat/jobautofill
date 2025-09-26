@@ -57,6 +57,16 @@ class JobAutofillContentScript {
         this.settings = { ...this.settings, ...message.settings };
         sendResponse({ success: true });
         break;
+        
+     case 'generateCoverLetter':
+      this.generateCoverLetter().then(result => {
+        sendResponse({ coverLetter: result });
+      }).catch(err => {
+        console.error("Error generating cover letter:", err);
+        sendResponse({ error: 'Cover letter generation failed' });
+      });
+      // Important for async sendResponse
+      return true;
       
       default:
         sendResponse({ error: 'Unknown action' });
@@ -435,6 +445,67 @@ class JobAutofillContentScript {
     
     current[keys[keys.length - 1]] = value;
   }
+  
+  // Use Chrome AI Writer API to draft a cover letter
+    async function generateCoverLetter1() {
+  try {
+    // 1. Grab job description text from the page
+    let jobDescription = document.body.innerText;
+    if (!jobDescription || jobDescription.length < 50) {
+      alert("Job description not found or too short.");
+      return;
+    }
+
+    // 2. Use Chrome AI Writer API
+    const writer = await ai.writer.create();
+    const prompt = `
+      Write a professional cover letter for a job application.
+      Use the following job description as context:
+      ${jobDescription}
+    `;
+
+    const result = await writer.write(prompt);
+
+    // 3. Display cover letter to user (popup or console for now)
+    console.log("Generated Cover Letter:", result);
+    alert("Cover letter generated! Check the console for full text.");
+    
+    // Optional: Auto-insert into a textarea field if exists
+    let textarea = document.querySelector("textarea");
+    if (textarea) {
+      textarea.value = result;
+    }
+
+  } catch (err) {
+    console.error("Error generating cover letter:", err);
+    alert("Failed to generate cover letter. Check console for details.");
+  }
+}
+
+async generateCoverLetter() {
+  let jobDescription = document.body.innerText;
+  if (!jobDescription || jobDescription.length < 50) {
+    return "Job description not found or too short.";
+  }
+
+  const writer = await ai.writer.create();
+  const prompt = `
+    Write a professional, concise cover letter based on this job description:
+    ${jobDescription}
+  `;
+
+  const result = await writer.write(prompt);
+
+  // Optionally inject into first textarea
+  let textarea = document.querySelector("textarea");
+  if (textarea) {
+    textarea.value = result;
+  }
+
+  return result;
+}
+
+
 }
 
 // Initialize content script

@@ -10,6 +10,23 @@ class PopupController {
     document.getElementById('fillBtn').addEventListener('click', () => this.autoFillForm());
     document.getElementById('detectBtn').addEventListener('click', () => this.detectFormFields());
 
+    document.getElementById("generateCoverLetter").addEventListener("click", () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      { action: "generateCoverLetter" },
+      (response) => {
+        if (response?.coverLetter) {
+          console.log("Cover Letter:", response.coverLetter);
+          alert("Cover letter generated! Check the form or console.");
+        } else {
+          alert("Failed: " + (response?.error || "Unknown error"));
+        }
+      }
+    );
+  });
+});
+
     // Profile Management
     document.getElementById('loadProfileBtn').addEventListener('click', () => this.loadProfile());
     document.getElementById('saveProfileBtn').addEventListener('click', () => this.saveProfile());

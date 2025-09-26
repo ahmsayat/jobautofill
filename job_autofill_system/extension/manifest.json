@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Job Application Autofill",
   "version": "1.0.0",
-  "description": "Automatically fill job application forms with your saved profile data",
+  "description": "Automatically fill job application forms with your saved profile data and generate cover letters with Chrome AI.",
   "permissions": [
     "activeTab",
     "storage",
@@ -30,5 +30,6 @@
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
-  }
+  },
+  "experimental_apis": true
 }
